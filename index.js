@@ -1,11 +1,19 @@
 require("dotenv").config();
 
 const express = require("express");
-const { backfuture } = require("./api/config/backfuture");
+const { backfutureDB } = require("./api/config/backfutureDB");
+const characterRoutes = require("./api/routes/Character");
 
 const app = express();
 
-backfuture();
+backfutureDB();
+
+app.use(express.json());
+
+app.use("/api/characters", characterRoutes);
+app.use("*", (req, res, next) => {
+  return res.status(404).json("Route not found")
+});
 
 
 app.listen(3000, () => {

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const backfuture = async () => {
+const backfutureDB = async () => {
   try {
     await mongoose.connect(process.env.DB_URL);
     console.log("Successfully connected to the DDBB");
@@ -9,4 +9,4 @@ const backfuture = async () => {
   }
 };
 
-module.exports = { backfuture };
+module.exports = { backfutureDB };
