@@ -1,4 +1,4 @@
-const { getCharacters, getCharactersById, addCharacters, updateCharacter, deleteCharacter } = require("../controllers/character");
+const { getCharacters, getCharactersById, addCharacters, updateCharacter, deleteCharacter } = require("../controllers/Character");
 
 const characterRoutes = require("express").Router();
 
